@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM</h1>
+    <p id="text">Happy</p>
+    <button onclick="onClick()">Click</button>
+    
+    <!-- Deleting an Element -->
+    <p id="remove">Remove Example</p>
+  <hr>
+    <!-- Editing an Attribute of an Element -->
+    <button id="btn1" onclick="changeimage()">FOOD</button>
+    <img id="dog" src="https://th.bing.com/th/id/OIP.q7hrrlJmYEnTavqubhP6fwHaE8?w=274&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+  
+    
+    
+    <script>
+    //  Creating and Appending an Element
+        const element = document.createElement('div')
+        element.id = "Createexample"
+        element.style.fontSize = "30px"
+        const addText = element.append("Hello, World!")
+        console.log(element)
+        document.body.append(element)
+
+    // Changing the Content of an Existing Element
+        function onClick() {
+            const change = document.getElementById('text').textContent = 'Updated text Content'
+        }
+
+    // Creating and Appending
+        const ui = document.createElement('ul')
+        const items = ['item 1', 'item 2', 'item 3', 'item 4']
+        items.forEach(text => {
+            const li = document.createElement('li')
+            li.textContent = text
+            ui.appendChild(li)
+        })
+        document.body.appendChild(ui)
+
+    // Editing an Attribute of an Element
+        function changeimage() {
+            const ele = document.getElementById('dog')
+            ele.setAttribute('src', 'https://th.bing.com/th/id/OIP.IQX-fel1vjnaCFmEfR947QHaFj?w=260&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7'  )
+          }
+    //   Deleting an Element
+        const elementrem = document.getElementById('remove')
+        elementrem.remove()
+    </script>
+</body>
+
+</html>
